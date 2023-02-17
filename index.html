@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exo 1 JS</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="carre"></div>
+
+    <script>
+      const carre = document.getElementById("carre");
+      carre.classList.add("carre");
+      carre.addEventListener("click", function () {
+        afficherInfo(carre);
+      });
+      function afficherInfo(uneClass) {
+        var vcolor = document.defaultView.getComputedStyle(uneClass, null)[ /* cette methode est utilisé au lieu de uneClass.style.color car le css n'a pas été fait via le script js */
+          "color"
+        ];
+        var vbackgroundcolor = document.defaultView.getComputedStyle(
+          uneClass,
+          null
+        )["background-color"];
+        var vheight = document.defaultView.getComputedStyle(uneClass, null)[
+          "height"
+        ];
+        var vwidth = document.defaultView.getComputedStyle(uneClass, null)[
+          "width"
+        ];
+        var vdisplay = document.defaultView.getComputedStyle(uneClass, null)[
+          "display"
+        ];
+        var vfontfamily = document.defaultView.getComputedStyle(uneClass, null)[
+          "font-family"
+        ];
+        var vfontsize = document.defaultView.getComputedStyle(uneClass, null)[
+          "font-size"
+        ];
+        alert(
+          "Class : " +
+            uneClass.className +
+            "\n- Color : " +
+            vcolor +
+            "\n- Background color : " +
+            vbackgroundcolor +
+            "\n- Height  x  Width : " +
+            vheight +
+            "  x  " +
+            vwidth +
+            "\n- Display : " +
+            vdisplay +
+            "\n- Font : " +
+            vfontfamily +
+            " (" +
+            vfontsize +
+            ")"
+        );
+      }
+      carre.innerText = "Texte";
+    </script>
+  </body>
+</html>
